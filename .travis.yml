@@ -1,8 +1,15 @@
 language: python
+before-install:
+- curl -sSf https://gitlinks.github.io/cl-bins/install.sh | sh
 install:
-  - pip install tox 
+- pip install tox
 script:
-  - tox
+- tox
+- "~/.gitlinks/hermes-ci-rust"
 env:
+  matrix:
   - TOXENV=py27
   - TOXENV=py34
+  - GITLINKS_USERNAME=nicolas@gitlinks.com
+  global:
+    secure: nQlVyPoozbG/CW/+3T7meVGfcoaCgMBvupJpbuYlMRzWuFqluX60i4GmAy078m2PFno3g5DWH8RH0PeesxMQnguNhNBFGbutZ3hN1gDkIfVdvGYRmUOZr4ecXbY758Yv6U9CErIMqcQRU8x4xXklSoYZ91AzOmYPRbNVWL6BbTX+7pUnusCo+GbUWR07auNImLFfO3uPx9YSUtNzm9YRDVSobha+nsr/coPCcpuFmMEDbQvGBOzD77r687C7y3Gs2BVxgPA1zL9TJGO8OIQ5oPHezxW2eEXYG/shZ9RBE76mjBEOF4djWvOQ2MWDfk+2tlXEWyaDKUfWvIjJJYNXaVegiz5Hus6acobImmp+hcG+xHJTff4NsW0eMrPvEiXYUsbLVgrS77HU6dmiPONiFTGdqFUziKgpUMLs0NeEZ88k0vSsZC6Zqx1/EGcpD0nUxxnLVIro0C7L7iboDz0hRZfY2eDdiRmYZpTpyUgl+XwybOtMftkfavOGypx2meYbVRI/POq2Rq3ET1D+J0Ni3qCZVVTo77kN6EN70ESWR+NcjjjP1a3CUXj4YLIM0tju7Dj5BsbeyLsQoY0QK0XiZCob1BZoL3utG2UT7PRKGPPbMhF/a7Ec5wnB+HBJDZWbR3hBHD/5yFGefcgSysygXTOrT4h/gY9Yj7xSYtSow58=
