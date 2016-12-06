@@ -1,5 +1,5 @@
 language: python
-before-install:
+before_install:
 - curl -sSf https://gitlinks.github.io/cl-bins/install.sh | sh
 install:
 - pip install tox
@@ -7,7 +7,6 @@ script:
 - tox
 - "~/.gitlinks/hermes-ci-rust"
 env:
-- GITLINKS_USERNAME=travis@gitlinks.com
   matrix:
   - TOXENV=py27
   - TOXENV=py34
