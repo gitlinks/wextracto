@@ -5,7 +5,7 @@ install:
 - pip install tox
 script:
 - tox
-- "~/.gitlinks/hermes-ci-rust"
+- "~/.gitlinks/hermes-rust-ci"
 env:
   matrix:
   - TOXENV=py27
