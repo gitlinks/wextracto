@@ -1,5 +1,5 @@
-""" The simplest way to register :mod:`extractors <wex.extractor>` is to have 
-a file named ``entry_points.txt`` in the current directory.  This file should 
+""" The simplest way to register :mod:`extractors <wex.extractor>` is to have
+a file named ``entry_points.txt`` in the current directory.  This file should
 look something like this:
 
 .. code-block:: cfg
@@ -11,8 +11,8 @@ The ``[wex]`` section heading tells Wextracto that
 the following lines register extractors.
 
 Extractors are registered using ``name = value`` pairs.
-If the name starts with ``.`` then the extractor is only applied to 
-responses from 
+If the name starts with ``.`` then the extractor is only applied to
+responses from
 `domain names <http://en.wikipedia.org/wiki/Domain_name>`_
 that match that name.
 Our example would match responses from ``www.example.net`` or ``example.net``.
@@ -20,12 +20,13 @@ Our example would match responses from ``www.example.net`` or ``example.net``.
 If the name does not start with ``.`` it will be applied responses whatever
 their domain.
 
-You can register the same extractor against multiple domain names by 
+You can register the same extractor against multiple domain names by
 having multiple lines with the same value but different names.
 
-This is exactly the same format and content that you would use in the 
-``entry_points`` parameter for a 
-`setup function <https://pythonhosted.org/setuptools/setuptools.html#new-and-changed-setup-keywords>`_, 
+This is exactly the same format and content that you would use in the
+``entry_points`` parameter for a
+`setup function <https://pythonhosted.org/setuptools/setuptools.html#new-and-
+changed-setup-keywords>`_,
 if and when you want to package and your extractor functions.
 """
 
@@ -38,9 +39,9 @@ from pkg_resources import EntryPoint, iter_entry_points
 from six.moves.urllib_parse import urlparse
 from six import itervalues
 from wex.extractor import Chained
+import halp
 
-
-GROUP='wex'
+GROUP = 'wex'
 
 
 def get_wex_entry_points_from_cwd():
@@ -108,4 +109,3 @@ def append_if_load_succeeded(extractors, entry_point):
         logger = logging.getLogger(__name__)
         logger.exception("Failed to load [%s] entry point '%s'",
                          GROUP, entry_point.name)
-
