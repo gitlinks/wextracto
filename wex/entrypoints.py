@@ -39,7 +39,7 @@ from pkg_resources import EntryPoint, iter_entry_points
 from six.moves.urllib_parse import urlparse
 from six import itervalues
 from wex.extractor import Chained
-import halp
+
 
 GROUP = 'wex'
 
