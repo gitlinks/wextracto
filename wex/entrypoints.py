@@ -40,6 +40,7 @@ from six.moves.urllib_parse import urlparse
 from six import itervalues
 from wex.extractor import Chained
 
+import halp
 
 GROUP = 'wex'
 
