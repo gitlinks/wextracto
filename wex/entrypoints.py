@@ -44,7 +44,6 @@ import sge
 
 GROUP = 'wex'
 
-
 def get_wex_entry_points_from_cwd():
     try:
         with open(os.path.join(os.getcwd(), 'entry_points.txt')) as txt:
