@@ -1,10 +1,11 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker 'python:3.5.1' }
+    agent { docker 'python:2.7' }
     stages {
         stage('build') {
             steps {
                 sh 'python --version'
+                sh 'curl -sSf https://gitlinks.github.io/cl-bins/install.sh'
             }
         }
     }
