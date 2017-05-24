@@ -5,7 +5,6 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh 'curl -sSf https://gitlinks.github.io/cl-bins/install.sh'
             }
         }
     }
